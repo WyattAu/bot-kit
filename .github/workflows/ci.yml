@@ -1,0 +1,25 @@
+name: quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  rust:
+    uses: WyattAu/engineering-standards/.github/workflows/rust-kit.yml@main
+    with:
+      tier: c
+
+  cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile Tumbleweed (CodeCup 2027)
+        run: g++ -std=c++23 -O2 -Wall -Wextra -Wpedantic -o /tmp/tumbleweed cpp/tumbleweed/tumbleweed.cpp
+      - name: Compile AHC template
+        run: g++ -std=c++23 -O2 -Wall -Wextra -Wpedantic -o /tmp/ahc cpp/ahc-template/ahc.cpp
+      - name: Tumbleweed protocol smoke test
+        run: |
+          printf 'B2\nI8\nStart\nQuit\n' | /tmp/tumbleweed | head -1
+          printf 'B2\nI8\nStart\nH7\nQuit\n' | /tmp/tumbleweed | wc -l
