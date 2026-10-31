@@ -8,18 +8,19 @@ loop** on day one; strength improvements are commits, not setup work.
 ## Layout
 
 ```
-crates/snake/        Battlesnake harness + pure core (Rust) — entry repo: WyattAu/wyatt-viper (planned)
 cpp/botkit/          botkit.hpp — shared header-only C++ (labeled hex grids, timers, line protocol)
 cpp/ahc-template/    AtCoder Heuristic Contest — SA template with clock budget (C++23)
 docs/TARGETS.md      competition → scaffold → entry-path map (dated)
 ```
 
+Rust entries live in their own repos (`WyattAu/wyatt-viper` for Battlesnake);
+they consume nothing here yet — a Rust `botkit` crate gets extracted when a
+second Rust consumer exists, not before.
+
 ## Quickstart
 
 ```sh
-# Battlesnake (test locally, deploy anywhere Rust runs)
-cargo run -p snake                 # PORT=8000 default
-cargo test -p snake
+# Battlesnake lives in its own repo now: WyattAu/wyatt-viper
 
 # AHC template
 g++ -std=c++23 -O2 -o /tmp/ahc cpp/ahc-template/ahc.cpp
