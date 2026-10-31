@@ -5,7 +5,7 @@ what's scaffolded in this repo, what remains, and the entry mechanics.
 
 | # | Competition | Scaffold | Status | Entry path |
 |---|------------|----------|--------|------------|
-| 1 | **CodeCup 2027 — Tumbleweed** (`codecup`, p1) | `cpp/tumbleweed/` — full board model + legality + v0 greedy + protocol | ✅ compiles, needs v1/v2 eval | Register at codecup.nl → "My submissions" → upload source (C++ supported). Test round **Oct 31, 2026**; every ~3 weeks after. Test locally with Caia. 30s total clock |
+| 1 | **CodeCup 2027 — Tumbleweed** (`codecup`, p1) | **own repo: [`WyattAu/tumbleweed`](https://github.com/WyattAu/tumbleweed)** — engine v0 + amalgamated single-file artifact | ✅ live | Register codecup.nl → "My submissions" → upload `submission/tumbleweed.cpp`. Test round Oct 31 2026; every ~3 weeks. Local: Caia. 30s total clock |
 | 2 | **Battlesnake** (`battlesnake`, p1) | `crates/snake/` — axum server, tail-aware safety + head-to-head + flood-fill | ✅ builds, unit-tested | Run (`PORT=8000 cargo run -p snake`), expose publicly (fly.io/render free tier), register at play.battlesnake.com → join arena + tournaments. 24/7 ladder |
 | 3 | **AtCoder Heuristic Contest** (`ahc`, p1) | `cpp/ahc-template/` — timer + SA loop + fast IO | ✅ template | atcoder.jp account → contest page → single-file C++ submit. ~monthly; AHC074 was Oct 30, 2026 |
 | 4 | **CodinGame bot programming** (`codingame`, p2) | none yet — single-file Rust pasted into their IDE | TODO | codingame.com account → bot programming league → Rust is supported. Continuous Wood→Legend ladder |
